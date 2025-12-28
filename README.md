@@ -1,44 +1,30 @@
-# Hehe Framework - WordPress + Tailwind CSS
+# Hehe Framework Generator
 
-Tema ini sudah terintegrasi dengan Tailwind CSS dan Server Lokal Otomatis.
+Ini adalah monorepo untuk generator tema WordPress "Hehe Framework".
 
-## Cara Menjalankan (Paling Mudah)
+## Cara Install & Pemakaian
 
-Kita menggunakan **`wp-now`**. Ini adalah alat canggih yang menjalankan WordPress langsung dari folder ini menggunakan Node.js (tanpa install XAMPP/Laragon/LocalWP).
+Karena ini sudah didesain sebagai NPM Package, Anda **tidak perlu menginstalnya** secara manual jika sudah di-publish.
 
-### 1. Persiapan
-
-Pastikan Anda sudah menginstall Node.js (Wajib). Lalu buka terminal di folder ini.
-
-### 2. Jalankan Server WordPress
-
-Ketik perintah ini:
+Cukup jalankan:
 
 ```bash
-npm run wp
+npx create-hehe-theme nama-tema-baru
 ```
 
-Atau jika ingin menjalankannya langsung tanpa setup script:
+### Untuk Development Lokal (Jika belum publish ke NPM)
 
-```bash
-npx @wp-now/wp-now start
-```
+1. Masuk ke folder ini.
+2. Link ke global npm:
+   ```bash
+   npm link
+   ```
+3. Keluar ke folder lain, lalu coba generate:
+   ```bash
+   create-hehe-theme test-tema
+   ```
 
-Tunggu sebentar, browser Anda akan otomatis terbuka dan login ke WordPress dengan tema ini yang sudah aktif!
+## Struktur
 
-### 3. Jalankan Tailwind (Untuk Desain)
-
-Buka terminal **baru** (terminal kedua), lalu ketik:
-
-```bash
-npm run dev
-```
-
-Ini agar CSS Anda otomatis ter-update saat Anda mengubah file.
-
----
-
-## Struktur File Assets
-
-- `src/css/app.css`: Tulis custom CSS atau @apply disini.
-- `assets/css/app.css`: File output otomatis (jangan diedit manual).
+- `bin/`: Script eksekusi CLI.
+- `template/`: Master file tema WordPress yang akan dicopy.

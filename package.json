@@ -1,20 +1,32 @@
 {
-  "name": "hehe-framework",
+  "name": "create-hehe-theme",
   "version": "1.0.0",
-  "description": "WordPress Theme with Tailwind CSS",
-  "main": "index.php",
+  "description": "CLI Generator for Hehe WordPress Framework",
+  "main": "bin/create-theme.js",
+  "bin": {
+    "create-hehe-theme": "./bin/create-theme.js"
+  },
   "scripts": {
-    "dev": "tailwindcss -i ./src/css/app.css -o ./assets/css/app.css --watch",
-    "build": "tailwindcss -i ./src/css/app.css -o ./assets/css/app.css --minify"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "wordpress",
     "theme",
-    "tailwindcss"
+    "generator",
+    "framework",
+    "tailwind"
   ],
   "author": "Antigravity",
-  "license": "GPL-2.0-or-later",
+  "license": "ISC",
+  "files": [
+    "bin",
+    "template"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

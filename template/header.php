@@ -33,15 +33,29 @@
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hehe-framework' ); ?></button>
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    )
-                );
-                ?>
+                <button id="menu-toggle" class="menu-toggle lg:hidden block text-gray-700 p-2 focus:outline-none" aria-controls="primary-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <div id="primary-menu-container" class="hidden lg:block">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu',
+                            'container'      => false,
+                            'menu_class'     => 'flex flex-col lg:flex-row lg:space-x-8 mt-4 lg:mt-0',
+                        )
+                    );
+                    ?>
+                </div>
             </nav><!-- #site-navigation -->
         </div>
 	</header><!-- #masthead -->
+
+    <script>
+    // Simple Mobile Menu Toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('primary-menu-container');
+        menu.classList.toggle('hidden');
+    });
+    </script>
