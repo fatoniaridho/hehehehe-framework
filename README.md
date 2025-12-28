@@ -1,4 +1,4 @@
-# Hehe Framework Generator
+# Hehe Framework
 
 Ini adalah monorepo untuk generator tema WordPress "Hehe Framework".
 
